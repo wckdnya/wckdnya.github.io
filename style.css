@@ -1,0 +1,179 @@
+/* ---------- basics / colours ---------- */
+
+/* keeping all the colours up here so they're easy to change later */
+:root {
+  --bg: #0a0a0a;
+  --text: #ededed;
+  --muted: #8a8a8a;
+  --accent: #4ade80;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- top bar ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+}
+
+.logo {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  margin-right: auto;   
+  margin-left: 1rem;
+}
+
+
+.links a,
+.label,
+.name,
+.status,
+.footer {
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+}
+
+.links a {
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+.label {
+  color: var(--text);
+  cursor: default;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.socials a {
+  color: var(--muted);
+  display: flex;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.socials a:hover {
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  flex: 1;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.name {
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.about {
+  max-width: 480px;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border: 1px solid #222;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 560px) {
+  .topbar {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+
+  .links {
+    order: 3;           
+    width: 100%;
+    margin: 0;
+  }
+
+  .socials {
+    margin-left: auto;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+}
